@@ -1,0 +1,24 @@
+steps:
+
+- name: 'martynas/archlinux:latest'
+  id: validate-pkgbuild
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    sudo chown build /workspace && \
+    namcap PKGBUILD && \
+    makepkg --syncdeps --noconfirm && \
+    namcap ucm-bin-* && \
+    pacman -Qip ucm-bin-* && \
+    pacman -Qlp ucm-bin-*
+
+- name: 'martynas/archlinux:latest'
+  id: validate-srcinfo
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    sudo chown build /workspace && \
+    makepkg --printsrcinfo | diff .SRCINFO - || \
+    { echo ".SRCINFO is out of sync. Please run 'makepkg --printsrcinfo' and commit the changes."; false; }
