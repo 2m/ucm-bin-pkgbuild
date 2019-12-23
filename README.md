@@ -6,15 +6,6 @@ This repository holds instructions for building an Arch Linux package for The [U
 
 ## Pushing to AUR
 
-First generate `.SRCINFO` by:
-
 ```
-makepkg --printsrcinfo > .SRCINFO
-```
-
-Then push to AUR git repository by:
-
-```
-git remote add aur ssh://aur@aur.archlinux.org/ucm-bin.git
-git push aur
+aurpublish ucm-bin
 ```
