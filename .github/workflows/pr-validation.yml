@@ -1,0 +1,19 @@
+on: [pull_request]
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    name: Validate a Pull Request
+    steps:
+    - uses: actions/checkout@v1
+    - name: Validate PKGBUILD
+      id: validate-pkgbuild
+      uses: 2m/arch-pkgbuild-builder@v1.3
+      with:
+        target: 'pkgbuild'
+        pkgname: 'ucm-bin'
+    - name: Validate SRCINFO
+      id: validate-srcinfo
+      uses: 2m/arch-pkgbuild-builder@v1.3
+      with:
+        target: 'srcinfo'
