@@ -12,8 +12,10 @@ jobs:
       with:
         target: 'pkgbuild'
         pkgname: 'ucm-bin'
+      working-directory: ucm-bin
     - name: Validate SRCINFO
       id: validate-srcinfo
       uses: 2m/arch-pkgbuild-builder@v1.3
       with:
         target: 'srcinfo'
+      working-directory: ucm-bin
