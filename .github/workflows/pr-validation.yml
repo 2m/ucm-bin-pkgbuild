@@ -8,14 +8,13 @@ jobs:
     - uses: actions/checkout@v1
     - name: Validate PKGBUILD
       id: validate-pkgbuild
-      uses: 2m/arch-pkgbuild-builder@v1.3
+      uses: 2m/arch-pkgbuild-builder@v1.4
       with:
         target: 'pkgbuild'
         pkgname: 'ucm-bin'
-      working-directory: ucm-bin
     - name: Validate SRCINFO
       id: validate-srcinfo
-      uses: 2m/arch-pkgbuild-builder@v1.3
+      uses: 2m/arch-pkgbuild-builder@v1.4
       with:
         target: 'srcinfo'
-      working-directory: ucm-bin
+        pkgname: 'ucm-bin'
