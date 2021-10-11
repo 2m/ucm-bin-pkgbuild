@@ -1,5 +1,5 @@
 /*.pkg.tar
 /src
 /pkg
-ucm
+ucm-bin/ucm*
 LICENSE
