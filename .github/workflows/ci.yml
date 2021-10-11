@@ -34,7 +34,7 @@ jobs:
         with:
           target: 'run'
           pkgname: 'ucm-bin'
-          command: 'ucm --version'
+          command: 'ucm --help'
 
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v0.0.2
