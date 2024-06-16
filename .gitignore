@@ -2,4 +2,6 @@
 /src
 /pkg
 ucm-bin/ucm*
+ucm-bin/src
+ucm-bin/pkg
 LICENSE
